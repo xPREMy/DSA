@@ -11,7 +11,7 @@ void insertion_Sort(vector <int> &v){
     for(int i=1;i<v.size();i++){
         int key = v[i];
         int j=i;
-        while(j>0 && v[j-1]>key){
+        while(j>0 && v[j-1]>key){ // [ as j-1 is used j should be never 0 hence j>0 ]
             v[j]=v[j-1];
             --j;
         }
