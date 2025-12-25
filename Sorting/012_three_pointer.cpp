@@ -7,9 +7,19 @@ void printV(const vector<int> &v){
     cout <<"\n";
 }
 void sorting(vector<int> &v){
-    vector<int> hash(3);
-    for(int i=0;i<v.size();i++){
-        hash[v[i]]++;
+    int low =0;
+    int high =v.size()-1;
+    int mid=0;
+    while(mid<=high){
+        if(mid==0){
+            swap(v[low++],v[mid++]);
+        }
+        else if(mid==2){
+            swap(v[high--],v[mid]);
+        }
+        else {
+            mid++;
+        }
     }
 }
 int main(){
