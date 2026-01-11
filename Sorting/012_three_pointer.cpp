@@ -11,11 +11,14 @@ void sorting(vector<int> &v){
     int high =v.size()-1;
     int mid=0;
     while(mid<=high){
-        if(mid==0){
-            swap(v[low++],v[mid++]);
+        if(v[mid]==0){
+            swap(v[low],v[mid]);
+            low++;
+            mid++;
         }
-        else if(mid==2){
-            swap(v[high--],v[mid]);
+        else if(v[mid]==2){
+            swap(v[high],v[mid]);
+            high--;
         }
         else {
             mid++;
@@ -23,15 +26,7 @@ void sorting(vector<int> &v){
     }
 }
 int main(){
-    vector<int> v;
-    int t;
-    cout << "size of array :";
-    cin >> t;
-    for(int i=0;i<t;i++){
-        int temp;
-        cin >> temp;
-        v.push_back(temp);
-    }
+    vector<int> v={2,1,0,2,1,0,2,1};
     sorting(v);
     printV(v);
     return 0;
